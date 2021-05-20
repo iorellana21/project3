@@ -40,7 +40,7 @@ function LoginForm(props) {
                         <div className="row align-items-center h-100">
                         <div className="col-6 mx-auto">
                             <div className="p-2 mx-auto d-block text-center">
-                                <h2>Welcome to gitChat App</h2>
+                                <h2>Welcome to the Friends/Connect App</h2>
                             <form {...extraProps} onSubmit={handleSubmit}>
                         <div className="form-group">
                             <label htmlFor={emailId}>Sign in </label>
