@@ -8,6 +8,9 @@ import Login from "./pages/Login";
 import UserContext from "./utils/UserContext";
 import SignUp from "./pages/SignUp";
 import Logout from "./pages/Logout";
+import NewUser from "./pages/NewUser";
+import Dashboard from "./pages/Dashboard";
+
 
 function App() {
   const [email, setEmail] = useState("");
@@ -16,7 +19,7 @@ function App() {
     <Router>
       <UserContext.Provider value={{email, setEmail, loggedIn, setLoggedIn}}>
         <div>
-          <Nav />
+          {/* <Nav /> */}
           <Switch>
             <Route exact path={["/", "/books"]}>
               <Books />
@@ -27,11 +30,17 @@ function App() {
             <Route exact path="/login">
               <Login />
             </Route>
+            <Route exact path="/new-user">
+              <NewUser />
+            </Route>
             <Route exact path="/signup">
               <SignUp />
             </Route>
             <Route exact path="/logout">
               <Logout />
+            </Route>
+            <Route exact path="/dashboard">
+              <Dashboard />
             </Route>
             <Route>
               <NoMatch />
