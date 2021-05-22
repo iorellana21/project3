@@ -59,6 +59,8 @@ export default function Dashboard() {
             <SearchBar />
             <Friendlist list={friendList} />
 
+            
+
         </div>
         <div className='col-sm-12 col-md-8'>
         <ChatInput /> 
