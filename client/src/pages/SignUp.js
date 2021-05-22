@@ -7,10 +7,12 @@ function SignUp(props){
     const {loggedIn} = useContext(UserContext);
     return (
         <div className="container">
-            {loggedIn && <Redirect to="/" />}
+            {loggedIn && <Redirect to="/sign-up" />}
             <h1>SignUp</h1>
             <SignUpForm className="full-page-signup" />
         </div>
     )
 }
 export default SignUp;
+
+
