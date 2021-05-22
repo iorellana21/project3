@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import UserContext from "./utils/UserContext";
 import NoMatch from "./pages/NoMatch";
 import Login from "./pages/Login";
-// import SignUp from "./pages/SignUp";
+import SignUp from "./pages/SignUp";
 // import Logout from "./pages/Logout";
 import NewUser from "./pages/NewUser";
 import Dashboard from "./pages/Dashboard";
@@ -31,9 +31,9 @@ function App() {
             <Route exact path="/dashboard">
               <Dashboard />
             </Route>
-            {/* <Route exact path="/signup">
+            <Route exact path="/signup">
               <SignUp />
-            </Route> */}
+            </Route>
             {/* <Route exact path="/logout">
               <Logout />
             </Route> */}

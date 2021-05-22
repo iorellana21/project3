@@ -2,6 +2,7 @@ import React, { Fragment, useContext, useRef } from 'react';
 // import "./style.scss";
 import API from '../../utils/API';
 import UserContext from '../../utils/UserContext';
+import { Link, useLocation } from 'react-router-dom';
 
 function SignUpForm(props) {
     const { email, setEmail, loggedIn, setLoggedIn } = useContext(UserContext);
@@ -36,22 +37,36 @@ function SignUpForm(props) {
                 console.log(err);
             });
     }
+    const location = useLocation();
     return (
         <Fragment>
             { (() => {
                 if (!loggedIn) {
-                    return (<form {...extraProps} onSubmit={handleSubmit}>
+                    return (
+                    
+                    <form {...extraProps} onSubmit={handleSubmit}>
+
                         <div className="form-group">
                             <label htmlFor={emailId}>Email address</label>
                             <input ref={emailInput} type="email" className="form-control" id={emailId} aria-describedby={emailHelpId} />
                             <small id={emailHelpId} className="email-help-text form-text text-muted">We'll never share your email with anyone else.</small>
                         </div>
+
                         <div className="form-group">
                             <label htmlFor={passwordId}>Password</label>
                             <input ref={passwordInput} type="password" className="form-control" id={passwordId} />
                         </div>
-                        <button type="submit" className="btn btn-primary">Sign Up</button>
+                        
+                        <Link to='/new-user' className={
+                            location.pathname === '/new-user' ? 
+                            'nav-link' : 
+                            'nav-link text-black btn btn-primary my-3 w-100'}
+                            >Sign Up!
+                        </Link>
+
+                        {/* <button type="submit" className="btn btn-primary">Sign Up</button> */}
                     </form>
+
                     );
                 }
                 else {

@@ -3,12 +3,15 @@ import React, { Fragment, useContext, useRef } from 'react';
 import API from '../../utils/API';
 import UserContext from '../../utils/UserContext';
 import { useHistory } from "react-router-dom";
+import { Link, useLocation } from 'react-router-dom';
 
 function LoginForm(props) {
     const { email, setEmail, loggedIn, setLoggedIn } = useContext(UserContext);
     const history = useHistory();
     const emailInput = useRef();
     const passwordInput = useRef();
+    const location = useLocation();
+
     let extraProps = {}
     if (props.className) {
         extraProps.className = props.className;
@@ -37,6 +40,7 @@ function LoginForm(props) {
             { (() => {
                 if (!loggedIn) {
                     return (
+
                         <div className="row align-items-center h-100">
                         <div className="col-6 mx-auto">
                             <div className="p-2 mx-auto d-block text-center">
@@ -51,14 +55,25 @@ function LoginForm(props) {
                             <label htmlFor={passwordId}>Password</label>
                             <input ref={passwordInput} type="password" className="form-control" id={passwordId} />
                         </div>
-                        <button type="submit" className="btn btn-primary w-100">Next</button>
-                        <button type="submit" className="btn btn-light my-3 w-100">Create an Account</button>
+                        {/* <button type="submit" className="btn btn-primary w-100">Next</button> */}
+
+                        <Link to='/new-user' className={location.pathname === '/new-user' ? 
+                        'nav-link' : 
+                        'nav-link text-black btn btn-primary my-3 w-100'}
+                        >Next
+                        </Link>
+
+                        <Link to='/signup' className={location.pathname === '/signup' ? 
+                        'nav-link' : 
+                        'nav-link text-black btn btn-light my-3 w-100'}
+                        >Create an Account
+                        </Link>
+
+                        {/* <button type="submit" className="btn btn-light my-3 w-100">Create an Account</button> */}
                     </form>
                             </div>
                         </div>
                     </div>
-                        
-
                     
                     );
                 }
