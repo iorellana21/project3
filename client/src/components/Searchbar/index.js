@@ -12,11 +12,14 @@ export default function SearchBar() {
               <button type="submit" className="btn btn-primary rounded-pill btn-block shadow-sm">Search</button>
             </div>
           </div> */}
+
+
+
           <div className="row">
-          <div className="form-group col-12">
+          <div className="form-group col-8">
               <input id="exampleFormControlInput6" type="email" placeholder="What're you searching for?" className="form-control form-control-underlined" />
             </div>
-            <div className="form-group col-12">
+            <div className="form-group col-4">
               <button type="submit" className="btn btn-primary rounded-pill btn-block shadow-sm search-button">Search</button>
             </div>
             
