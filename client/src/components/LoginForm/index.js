@@ -1,5 +1,5 @@
 import React, { Fragment, useContext, useRef } from 'react';
-import "./style.scss";
+// import "./style.scss";
 import API from '../../utils/API';
 import UserContext from '../../utils/UserContext';
 import { useHistory } from "react-router-dom";
@@ -36,9 +36,14 @@ function LoginForm(props) {
         <Fragment>
             { (() => {
                 if (!loggedIn) {
-                    return (<form {...extraProps} onSubmit={handleSubmit}>
+                    return (
+                        <div className="row align-items-center h-100">
+                        <div className="col-6 mx-auto">
+                            <div className="p-2 mx-auto d-block text-center">
+                                <h2>Welcome to the Friends/Connect App</h2>
+                            <form {...extraProps} onSubmit={handleSubmit}>
                         <div className="form-group">
-                            <label htmlFor={emailId}>Email address</label>
+                            <label htmlFor={emailId}>Sign in </label>
                             <input ref={emailInput} type="email" className="form-control" id={emailId} aria-describedby={emailHelpId} />
                             <small id={emailHelpId} className="email-help-text form-text text-muted">We'll never share your email with anyone else.</small>
                         </div>
@@ -46,8 +51,15 @@ function LoginForm(props) {
                             <label htmlFor={passwordId}>Password</label>
                             <input ref={passwordInput} type="password" className="form-control" id={passwordId} />
                         </div>
-                        <button type="submit" className="btn btn-primary">Login</button>
+                        <button type="submit" className="btn btn-primary w-100">Next</button>
+                        <button type="submit" className="btn btn-light my-3 w-100">Create an Account</button>
                     </form>
+                            </div>
+                        </div>
+                    </div>
+                        
+
+                    
                     );
                 }
                 else {
