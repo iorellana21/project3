@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import SearchBar from '../components/Searchbar';
 import Friendlist from '../components/Friendlist';
 import ChatInput from '../components/ChatInput';
+import { Link, useLocation } from 'react-router-dom';
 /**
   * step 2 use useEffect to set state with that friends array when the component loads
  * step 3 pass the state as a prop to friend list component
@@ -41,10 +42,18 @@ export default function Dashboard() {
     setFriendList(friends);
 
   })
+  const location = useLocation();
 
 
   return (
     <div className="container">
+    
+    <Link to='/' className={location.pathname === '/' ? 
+    'nav-link' : 
+    'nav-link text-white btn btn-primary w-100'}
+    >Home
+    </Link>
+
     <div className="row">
         <div className='col-sm-12 col-md-4'>
             <SearchBar />
