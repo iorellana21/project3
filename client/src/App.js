@@ -1,11 +1,11 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import UserContext from "./utils/UserContext";
 import NoMatch from "./pages/NoMatch";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
-// import Logout from "./pages/Logout";
+import Logout from "./pages/Logout";
 import NewUser from "./pages/NewUser";
 import Dashboard from "./pages/Dashboard";
 
@@ -17,11 +17,11 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   return (
     <Router>
-      <UserContext.Provider value={{email, setEmail, loggedIn, setLoggedIn}}>
+      <UserContext.Provider value={{ email, setEmail, loggedIn, setLoggedIn }}>
         <div>
           {/* <Nav /> */}
           <Switch>
-                   
+
             <Route exact path="/">
               <Login />
             </Route>
@@ -34,9 +34,9 @@ function App() {
             <Route exact path="/signup">
               <SignUp />
             </Route>
-            {/* <Route exact path="/logout">
+            <Route exact path="/logout">
               <Logout />
-            </Route> */}
+            </Route>
             <Route>
               <NoMatch />
             </Route>
