@@ -1,30 +1,18 @@
 import React from "react";
-import './index.scss';
+import { FaSearch } from "react-icons/fa";
+import "./index.scss";
 
 export default function SearchBar() {
   return (
-    <form className="mt-4">
-          {/* <div className="row mb-4">
-            <div className="form-group col-md-9">
-              <input id="exampleFormControlInput5" type="email" placeholder="What're you searching for?" className="form-control form-control-underlined">
-            </div>
-            <div className="form-group col-md-3">
-              <button type="submit" className="btn btn-primary rounded-pill btn-block shadow-sm">Search</button>
-            </div>
-          </div> */}
-
-
-
-          <div className="row">
-          <div className="form-group col-8">
-              <input id="exampleFormControlInput6" type="email" placeholder="What're you searching for?" className="form-control form-control-underlined" />
-            </div>
-            <div className="form-group col-4">
-              <button type="submit" className="btn btn-primary rounded-pill btn-block shadow-sm search-button">Search</button>
-            </div>
-            
-          </div>
-        </form>
+    <form className="searchform">
+      {/* <div className="row"> */}
+      <div className="form-group has-search mx-0">
+      <FaSearch className='form-control-feedback' />
+        <input type="text" className="form-control searchbar " placeholder="Search" />
+      </div>
+        <div className="form-group col-4">
+        </div>
+      {/* </div> */}
+    </form>
   );
 }
- 
