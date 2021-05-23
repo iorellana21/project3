@@ -11,4 +11,5 @@ messaging app
 * orient the divs to fit the page, css to follow in endgame
 * Files needing editing: 
     * Client -> src -> -> components (loginform[index.js], signupform[index.js]) -> pages (dashboard, NewUser)
+* npm install react-icons --save
 
